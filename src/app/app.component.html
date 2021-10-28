@@ -1,0 +1,74 @@
+<form [formGroup]="inputForm">
+  <div style="width=100%;display:flex">
+    <div style="width:30%;padding:1vw">
+      <div>First Name</div>
+      <input formControlName="firstName" />
+    </div>
+    <div style="width:30%;padding:1vw">
+      <div>Middle Name</div>
+      <input formControlName="middleName" />
+    </div>
+    <div style="width:30%;padding:1vw">
+      <div>Last Name</div>
+      <input formControlName="lastName" />
+    </div>
+  </div>
+  <div style="width:100%;padding:2vh">
+    Employee Code
+    <input formControlName="employeeCode" />
+  </div>
+  <div style="width:100%;padding:2vh">
+    Designation
+    <input formControlName="designation" />
+  </div>
+  <div style="width:100%;padding:2vh">
+    Department
+    <input formControlName="department" />
+  </div>
+  <div style="width:100%;padding:2vh">
+    Date of birth
+    <input type="date" formControlName="dob" />
+  </div>
+  <div style="width:100%;display:flex;padding:2vh">
+    <div style="padding:3vw">Gender</div>
+    Male
+    <input value="male" formControlName="gender" type="radio" />
+    Female
+    <input value="female" formControlName="gender" type="radio" />
+  </div>
+  <div style="width:100%;padding:2vh">
+    Email
+    <input formControlName="email" type="email" />
+  </div>
+  <div style="width:100%;padding:2vh">
+    Mobile
+    <input formControlName="mobile" type="number" />
+  </div>
+  <div style="display:flex;">
+    <button type="submit" (click)="submit()" style="margin:2vw">Submit</button>
+    <button type="reset" style="margin:2vw">Cancle</button>
+  </div>
+</form>
+
+<table style="margin-top:5vh" border="1">
+  <tr>
+    <th>Employee Code</th>
+    <th>Employee Name</th>
+    <th>Designation</th>
+    <th>Department</th>
+    <th>Date Of Birth</th>
+    <th>Gender</th>
+    <th>EMail</th>
+    <th>Mobile</th>
+  </tr>
+  <tr *ngFor="let emp of empList">
+    <td>{{ emp.employeeCode }}</td>
+    <td>{{ emp.firstName }} {{ emp.lastName }}</td>
+    <td>{{ emp.designation }}</td>
+    <td>{{ emp.department }}</td>
+    <td>{{ emp.dob }}</td>
+    <td>{{ emp.gender }}</td>
+    <td>{{ emp.email }}</td>
+    <td>{{ emp.mobile }}</td>
+  </tr>
+</table>
